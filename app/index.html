@@ -18,29 +18,40 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <h1>RGB to hex convertor</h1>
+
         <div id='container'></div>
 
 
-        <script id='template' type='text/ractive'> 
-            <label for="red">Red</label>
-            <input on-change="convert" id="red" type="range" class="vertical" max="255" min="0" value="{{ red }}">
-            
-            <label for="green">Green</label>
-            <input id="green" on-change="convert" type="range" class="vertical" max="255" min="0" value="{{ green}}">
-                    
-            <label for="blue">Blue</label>
-            <input id="blue" on-change="convert" type="range" class="vertical" max="255" min="0" value="{{ blue }}">
-                <br>    
-                    
-            <input value="{{ red }}" type="number" min="0" max="255" step="1" on-change="convert"> 
-            <input type="number" on-change="convert" value="{{ green }}" min="0" max="255" step="1">
-            <input type="number" on-change="convert" value="{{blue}}" min="0" max="255" step="1">
-            <br>
-            <button id="convert" on-click="convert">Convert to hex</button>
-            <br>
-            
-            <div class="colour {{class}}" contenteditable="true" value="{{hex}}" style="background:rgb({{red}},{{green}},{{blue}}"></div>
+        <script id='template' type='text/ractive'>
+            <div class="wrapper {{ class }}" style="background:rgb({{red}},{{green}},{{blue}}">
+                <h1 class="alpha {{ class }}">RGB to hex convertor</h1>
+                <p>Enter the RGB components below</p>
+                <div class="row">
+                    <label for="red">Red</label>
+                    <input on-change="convert" id="red" type="range" max="255" min="0" value="{{ red }}">
+                    <input value="{{ red }}" type="number" min="0" max="255" step="1" on-change="convert"> 
+                </div>
+
+                <div class="row">
+                    <label for="green">Green</label>
+                    <input id="green" on-change="convert" type="range" max="255" min="0" value="{{ green}}">
+                    <input type="number" on-change="convert" value="{{ green }}" min="0" max="255" step="1">
+                </div>
+
+                <div class="row">
+                    <label for="blue">Blue</label>
+                    <input id="blue" on-change="convert" type="range" max="255" min="0" value="{{ blue }}">
+                    <input type="number" on-change="convert" value="{{blue}}" min="0" max="255" step="1">
+                </div>
+
+                <button id="convert" on-click="convert">Convert to hex</button>
+
+
+                <p>...or type the hex code here</p>
+                
+                <div class="colour" contenteditable="true" value="{{hex}}"></div>
+
+            </div>
         </script>
 
 
