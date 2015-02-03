@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>RGB to hex and hex to RGB convertor</title>
+        <title>RGB to hex and hex to RGB converter</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,7 +24,7 @@
 
         <script id='template' type='text/ractive'>
             <div class="wrapper {{ class }}" style="background:rgb({{red}},{{green}},{{blue}}">
-                <h1 class="alpha {{ class }}">RGB to hex convertor</h1>
+                <h1 class="alpha {{ class }}">RGB to hex converter</h1>
                 <p>Enter the RGB components below</p>
                 <div class="row">
                     <label for="red">Red</label>
@@ -47,7 +47,7 @@
                 <button id="convert" on-click="convert">Convert to hex</button>
 
 
-                <p>...or type the hex code here</p>
+                <p>...or type the hex code here:</p>
                 
                 <div class="colour" contenteditable="true" value="{{hex}}"></div>
 

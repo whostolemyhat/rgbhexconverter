@@ -22,6 +22,24 @@ ractive.observe('hex', function(newValue, oldValue, keyPath) {
         ractive.set('red', updated.r);
         ractive.set('green', updated.g);
         ractive.set('blue', updated.b);
+    } else if(newValue.length === 6) {
+
+    } else if(newValue.length === 4) {
+        console.log('4');
+        if(newValue.indexOf('#') === 0) {
+            var updated = hexToRgb(newValue);
+            ractive.set('red', updated.r);
+            ractive.set('green', updated.g);
+            ractive.set('blue', updated.b);
+        }
+
+    } else if(newValue.length === 3) {
+        if(newValue.indexOf('#') === -1) {
+            var updated = hexToRgb(newValue);
+            ractive.set('red', updated.r);
+            ractive.set('green', updated.g);
+            ractive.set('blue', updated.b);
+        }
     }
 });
 

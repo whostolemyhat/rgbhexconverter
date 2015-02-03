@@ -494,7 +494,7 @@ h4,
 h5,
 h6 {
   font-family: Arial, Helvetica, sans-serif;
-  color: #222222;
+  color: #222;
   font-weight: bold;
 }
 
@@ -544,7 +544,7 @@ h6,
    ========================================================================== */
 /* line 68, ../sass/modules/_typography.scss */
 a {
-  color: #0000ee;
+  color: #00e;
   background: transparent;
 }
 
@@ -569,7 +569,7 @@ a:active {
   color: #000088;
 }
 
-/* line 1, ../sass/modules/_colour.scss */
+/* line 4, ../sass/modules/_colour.scss */
 body,
 html {
   position: relative;
@@ -579,12 +579,21 @@ html {
   padding: 0;
 }
 
-/* line 10, ../sass/modules/_colour.scss */
-.alpha {
-  margin: 0 0 1em;
+/* line 13, ../sass/modules/_colour.scss */
+p {
+  margin:  32px 0 32px;
+  margin: 2rem 0 2rem;
 }
 
-/* line 14, ../sass/modules/_colour.scss */
+/* line 17, ../sass/modules/_colour.scss */
+.alpha {
+  margin:  0 0 24px;
+  margin: 0 0 1.5rem;
+  font-size:  32px;
+  font-size: 2rem;
+}
+
+/* line 22, ../sass/modules/_colour.scss */
 .wrapper {
   width: 100%;
   height: 100%;
@@ -599,23 +608,49 @@ html {
   padding-top: 3em;
 }
 
-/* line 28, ../sass/modules/_colour.scss */
+/* line 36, ../sass/modules/_colour.scss */
 .light {
   color: #333;
 }
 
-/* line 32, ../sass/modules/_colour.scss */
+/* line 40, ../sass/modules/_colour.scss */
 .dark {
   color: #efefef;
 }
 
-/* line 36, ../sass/modules/_colour.scss */
+/* line 44, ../sass/modules/_colour.scss */
 .row {
   display: block;
   margin: 0 0 1em;
 }
 
-/* line 48, ../sass/modules/_colour.scss */
+/* line 56, ../sass/modules/_colour.scss */
 input[type="number"] {
   display: inline-block;
 }
+
+/* line 61, ../sass/modules/_colour.scss */
+.colour {
+  font-size:  48px;
+  font-size: 3rem;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-clip: padding-box;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+/* line 69, ../sass/modules/_colour.scss */
+.dark .colour:focus {
+  border: 1px solid #333;
+  background: #efefef;
+  color: #333;
+}
+/* line 77, ../sass/modules/_colour.scss */
+.light .colour:focus {
+  border: 1px solid #efefef;
+  background: #333;
+  color: #efefef;
+}
+
+/*# sourceMappingURL=main.css.map */

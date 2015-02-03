@@ -1,3 +1,6 @@
+$grey: #333;
+$white: #efefef;
+
 body,
 html {
     position: relative;
@@ -7,8 +10,13 @@ html {
     padding: 0;
 }
 
+p {
+    @include rem(margin, 2rem 0 2rem);
+}
+
 .alpha {
-    margin: 0 0 1em;
+    @include rem(margin, 0 0 1.5rem);
+    @include rem(font-size, 2rem);
 }
 
 .wrapper {
@@ -26,11 +34,11 @@ html {
 }
 
 .light {
-    color: #333;
+    color: $grey;
 }
 
 .dark {
-    color: #efefef;
+    color: $white;
 }
 
 .row {
@@ -47,4 +55,29 @@ html {
 
 input[type="number"] {
     display: inline-block;
+}
+
+// hex output
+.colour {
+    @include rem(font-size, 3rem);
+    @include border-radius(3px);
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+
+    .dark & {
+        &:focus {
+            border: 1px solid $grey;
+            background: $white;
+            color: $grey;
+        }
+    }
+
+    .light & {
+        &:focus {
+            border: 1px solid $white;
+            background: $grey;
+            color: $white;
+        }
+    }
 }
