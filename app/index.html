@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/css/main.css">
     </head>
     <body>
@@ -21,6 +21,7 @@
 
         <div id='container'></div>
 
+        
 
         <script id='template' type='text/ractive'>
             <div class="wrapper {{ class }}" style="background:rgb({{red}},{{green}},{{blue}}">
@@ -44,13 +45,17 @@
                     <input type="number" on-change="convert" value="{{blue}}" min="0" max="255" step="1">
                 </div>
 
-                <button id="convert" on-click="convert">Convert to hex</button>
+                <button id="convert" on-click="convert">Convert!</button>
 
 
-                <p>...or type the hex code here:</p>
+                <p>...or type the hex code here to convert hex to RGB:</p>
                 
                 <div class="colour" contenteditable="true" value="{{hex}}"></div>
 
+                <footer>
+                    <p>Created by <a href="https://www.jamestease.co.uk" title="James Tease's homepage">@whostolemyhat</a>. 
+                        <a href="http://twitter.com/whostolemyhat" title="Follow me on Twitter">Follow me on Twitter here</a>.</p>
+                </footer>
             </div>
         </script>
 

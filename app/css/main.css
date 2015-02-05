@@ -475,7 +475,7 @@ input,
 select,
 textarea {
   font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
 }
 
 /* line 17, ../sass/modules/_typography.scss */
@@ -493,7 +493,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
   color: #222;
   font-weight: bold;
 }
@@ -544,29 +544,20 @@ h6,
    ========================================================================== */
 /* line 68, ../sass/modules/_typography.scss */
 a {
-  color: #00e;
-  background: transparent;
+  color: #efefef;
+  background: #2dac36;
+  text-decoration: none;
+  padding: 3px;
 }
 
-/* line 73, ../sass/modules/_typography.scss */
-a:visited {
-  color: #2222ff;
-}
-
-/* line 77, ../sass/modules/_typography.scss */
+/* line 79, ../sass/modules/_typography.scss */
 a:hover {
-  color: #000088;
+  background: #3fcd49;
 }
 
-/* line 81, ../sass/modules/_typography.scss */
+/* line 84, ../sass/modules/_typography.scss */
 a:focus {
   outline: thin dotted;
-  color: #000022;
-}
-
-/* line 86, ../sass/modules/_typography.scss */
-a:active {
-  color: #000088;
 }
 
 /* line 4, ../sass/modules/_colour.scss */
@@ -587,8 +578,8 @@ p {
 
 /* line 17, ../sass/modules/_colour.scss */
 .alpha {
-  margin:  0 0 24px;
-  margin: 0 0 1.5rem;
+  margin:  48px 0 24px;
+  margin: 3rem 0 1.5rem;
   font-size:  32px;
   font-size: 2rem;
 }
@@ -605,31 +596,67 @@ p {
   margin: 0 auto;
   text-align: center;
   line-height: 1;
-  padding-top: 3em;
 }
 
-/* line 36, ../sass/modules/_colour.scss */
+/* line 35, ../sass/modules/_colour.scss */
 .light {
   color: #333;
 }
 
-/* line 40, ../sass/modules/_colour.scss */
+/* line 39, ../sass/modules/_colour.scss */
 .dark {
   color: #efefef;
 }
 
-/* line 44, ../sass/modules/_colour.scss */
+/* line 43, ../sass/modules/_colour.scss */
 .row {
   display: block;
   margin: 0 0 1em;
 }
+@media only screen and (min-width: 500px) {
+  /* line 43, ../sass/modules/_colour.scss */
+  .row {
+    max-width: 500px;
+    margin: 0 auto 1em;
+  }
+}
 
-/* line 56, ../sass/modules/_colour.scss */
+/* line 53, ../sass/modules/_colour.scss */
+#convert {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-clip: padding-box;
+  font-size:  19.2px;
+  font-size: 1.2rem;
+  margin:  16px auto;
+  margin: 1rem auto;
+  padding: 8px 16px;
+  background: #2dac36;
+  border: 1px solid #efefef;
+  color: #333;
+}
+/* line 62, ../sass/modules/_colour.scss */
+#convert:hover {
+  background: #3fcd49;
+}
+
+/* line 67, ../sass/modules/_colour.scss */
 input[type="number"] {
+  margin-left:  8px;
+  margin-left: 0.5rem;
   display: inline-block;
 }
 
-/* line 61, ../sass/modules/_colour.scss */
+/* line 72, ../sass/modules/_colour.scss */
+label {
+  margin-right:  8px;
+  margin-right: 0.5rem;
+  display: inline-block;
+  width: 50px;
+  text-align: right;
+}
+
+/* line 80, ../sass/modules/_colour.scss */
 .colour {
   font-size:  48px;
   font-size: 3rem;
@@ -640,13 +667,13 @@ input[type="number"] {
   margin: auto;
   text-align: center;
 }
-/* line 69, ../sass/modules/_colour.scss */
+/* line 88, ../sass/modules/_colour.scss */
 .dark .colour:focus {
   border: 1px solid #333;
   background: #efefef;
   color: #333;
 }
-/* line 77, ../sass/modules/_colour.scss */
+/* line 96, ../sass/modules/_colour.scss */
 .light .colour:focus {
   border: 1px solid #efefef;
   background: #333;

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>RGB to hex and hex to RGB converter</title>
+        <meta name="description" content="RGB to hex and hex to RGB converter">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/static/rgb/css/main.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div id='container'></div>
+
+        <script id='template' type='text/ractive'>
+            <div class="wrapper {{ class }}" style="background:rgb({{red}},{{green}},{{blue}}">
+                <h1 class="alpha {{ class }}">RGB to hex converter</h1>
+                <p>Enter the RGB components below</p>
+                <div class="row">
+                    <label for="red">Red</label>
+                    <input on-change="convert" id="red" type="range" max="255" min="0" value="{{ red }}">
+                    <input value="{{ red }}" type="number" min="0" max="255" step="1" on-change="convert"> 
+                </div>
+
+                <div class="row">
+                    <label for="green">Green</label>
+                    <input id="green" on-change="convert" type="range" max="255" min="0" value="{{ green}}">
+                    <input type="number" on-change="convert" value="{{ green }}" min="0" max="255" step="1">
+                </div>
+
+                <div class="row">
+                    <label for="blue">Blue</label>
+                    <input id="blue" on-change="convert" type="range" max="255" min="0" value="{{ blue }}">
+                    <input type="number" on-change="convert" value="{{blue}}" min="0" max="255" step="1">
+                </div>
+
+                <button id="convert" on-click="convert">Convert!</button>
+
+
+                <p>...or type the hex code here to convert hex to RGB:</p>
+                
+                <div class="colour" contenteditable="true" value="{{hex}}"></div>
+
+                <footer>
+                    <p>Created by <a href="https://www.jamestease.co.uk" title="James Tease's homepage">@whostolemyhat</a>. 
+                        <a href="http://twitter.com/whostolemyhat" title="Follow me on Twitter">Follow me on Twitter here</a>.</p>
+                </footer>
+            </div>
+        </script>
+
+
+        <script src="/static/rgb/js/vendor/ractive.js"></script>
+        <script src="/static/rgb/js/plugins.js"></script>
+        <script src="/static/rgb/js/colour.js"></script>
+        <script src="/static/rgb/js/main.js"></script>
+
+
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-11627514-2');ga('send','pageview');
+        </script>
+    </body>
+</html>

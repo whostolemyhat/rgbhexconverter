@@ -67,22 +67,25 @@ h6,
 
 a { 
     color: $linkColour; 
-    background: transparent;
+    background: #2dac36;
+    text-decoration: none;
+    padding: 3px;
 }
 
 a:visited { 
-    color: $linkVisited; 
+    // color: $linkVisited; 
 }
 
 a:hover { 
-    color: $linkHover; 
+    // color: $linkHover;
+    background: lighten(#2dac36, 10%);
 }
 
 a:focus { 
     outline: thin dotted; 
-    color: $linkFocus; 
+    // color: $linkFocus; 
 }
 
 a:active { 
-    color: $linkActive; 
+    // color: $linkActive;
 }

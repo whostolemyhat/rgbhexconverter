@@ -15,7 +15,7 @@ p {
 }
 
 .alpha {
-    @include rem(margin, 0 0 1.5rem);
+    @include rem(margin, 3rem 0 1.5rem);
     @include rem(font-size, 2rem);
 }
 
@@ -30,7 +30,6 @@ p {
     margin: 0 auto;
     text-align: center;
     line-height: 1;
-    padding-top: 3em;
 }
 
 .light {
@@ -44,17 +43,37 @@ p {
 .row {
     display: block;
     margin: 0 0 1em;
+
+    @media only screen and (min-width: 500px) {
+        max-width: 500px;
+        margin: 0 auto 1em;
+    }
 }
 
-// input[type=range]
-// {
-//     height: 8px;
-//     width: 100px;
-//     padding: 0 5px;
-// }
+#convert {
+    @include border-radius(3px);
+    @include rem(font-size, 1.2rem);
+    @include rem(margin, 1rem auto);
+    padding: 8px 16px;
+    background: #2dac36;
+    border: 1px solid $white;
+    color: $grey;
+
+    &:hover {
+        background: lighten(#2dac36, 10%);
+    }
+}
 
 input[type="number"] {
+    @include rem(margin-left, 0.5rem);
     display: inline-block;
+}
+
+label {
+    @include rem(margin-right, 0.5rem);
+    display: inline-block;
+    width: 50px;
+    text-align: right;
 }
 
 // hex output
