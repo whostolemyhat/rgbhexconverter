@@ -5,7 +5,8 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
-        app: 'app', // path to app files
+        app: 'app', // path to app files,
+        build: 'app/build',
         pkg: grunt.file.readJSON('package.json'),
 
         watch: {
@@ -24,7 +25,7 @@ module.exports = function(grunt) {
                 files: [
                     '<%= app %>/js/**/*.js'
                 ],
-                tasks: ['jshint'],
+                tasks: ['jshint', 'browserify'],
             },
 
 
@@ -48,7 +49,7 @@ module.exports = function(grunt) {
                     lineNumbers: true
                 },
                 files: {
-                    '<%= app %>/css/main.css': '<%= app %>/sass/main.scss'
+                    '<%= build %>/css/main.css': '<%= app %>/sass/main.scss'
                 }
             },
             prod: {
@@ -57,12 +58,12 @@ module.exports = function(grunt) {
                     lineNumbers: false
                 },
                 files: {
-                    '<%= app %>/build/css/main.css': '<%= app %>/sass/main.scss'
+                    '<%= build %>/css/main.css': '<%= app %>/sass/main.scss'
                 }
             }
         },
 
-        clean: [ '<%= app %>/build/' ],
+        clean: [ '<%= build %>/' ],
 
         tag: {
             banner: '/* <%= pkg.name %> */\n' +
@@ -76,8 +77,8 @@ module.exports = function(grunt) {
                 banner: '<%= tag.banner %>'
             },
             dist: {
-                src: ['<%= app %>/js/*.js'], // not vendor files
-                dest: '<%= app %>/build/js/app.min.js'
+                src: ['<%= build %>/js/app.js'],
+                dest: '<%= build %>/js/app.min.js'
             }
         },
 
@@ -93,6 +94,16 @@ module.exports = function(grunt) {
             ]
         },
 
+        browserify: {
+            dist: {
+                options: {
+                    transform: [['babelify', { 'stage': 0} ]]
+                },
+                files: {
+                    '<%= build %>/js/app.js' : '<%= app %>/js/main.js'
+                }
+            }
+        },
 
         connect: {
             options: {
@@ -106,9 +117,8 @@ module.exports = function(grunt) {
                 }
             }
         }
-
     });
 
-    grunt.registerTask('default', ['connect:livereload', 'watch']);
-    grunt.registerTask('build', ['jshint', 'clean', 'uglify', 'sass:prod']);
+    grunt.registerTask('default', ['connect:livereload', 'browserify', 'sass:dev', 'watch']);
+    grunt.registerTask('build', ['jshint', 'uglify', 'sass:prod']);
 };

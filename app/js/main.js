@@ -1,4 +1,7 @@
-var ractive = new Ractive({
+const colour = require('./colour');
+const Ractive = require('./vendor/ractive');
+
+const ractive = new Ractive({
     el: 'container',
     template: '#template',
     data: {
@@ -9,14 +12,24 @@ var ractive = new Ractive({
     }
 });
 
-ractive.observe('red green blue',  function() {
-        ractive.set('hex', rgbToHex(ractive.get('red'),ractive.get('green'),ractive.get('blue')));
-    checkLuminance(ractive.get('red'),ractive.get('green'),ractive.get('blue'));
+ractive.observe('red green blue',  () => {
+    ractive.set('hex', colour.rgbToHex(
+        ractive.get('red'),
+        ractive.get('green'),
+        ractive.get('blue')
+    ));
+    const luminance = colour.checkLuminance(
+        ractive.get('red'),
+        ractive.get('green'),
+        ractive.get('blue')
+    );
+    ractive.set('class', luminance);
 });
 
-ractive.observe('hex', function(newValue, oldValue, keyPath) {
+// new, old, keyPath
+ractive.observe('hex', newValue => {
     try {
-        var updated = hexToRgb(newValue);
+        const updated = colour.hexToRgb(newValue);
         ractive.set('red', updated.r);
         ractive.set('green', updated.g);
         ractive.set('blue', updated.b);

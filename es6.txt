@@ -1,0 +1,16 @@
+to add es6:
+
+npm install --save-dev grunt-browserify babelify
+
+add task to gruntfile:
+
+browserify: {
+    dist: {
+        options: {
+            transform: [['babelify', { 'stage': 0} ]]
+        },
+        files: {
+            '<%= build %>/js/app.js' : '<%= app %>/js/main.js'
+        }
+    }
+},
